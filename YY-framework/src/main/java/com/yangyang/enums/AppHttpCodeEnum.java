@@ -8,11 +8,19 @@ public enum AppHttpCodeEnum {
     NO_OPERATOR_AUTH(403,"无权限操作"),
     SYSTEM_ERROR(500,"出现错误"),
     USERNAME_EXIST(501,"用户名已存在"),
-    PHONENUMBER_EXIST(502,"手机号已存在"), EMAIL_EXIST(503, "邮箱已存在"),
+    PHONENUMBER_EXIST(502,"手机号已存在"),
+    EMAIL_EXIST(503, "邮箱已存在"),
+    NICKNAME_EXIST(512, "昵称已存在"),
+
     REQUIRE_USERNAME(504, "必需填写用户名"),
-    COMMENT_NOT_EXIST(506, "评论不能为空"),
     LOGIN_ERROR(505,"用户名或密码错误"),
-    MUST_PNG(507, "必须是png文件");
+    COMMENT_NOT_EXIST(506, "评论不能为空"),
+    MUST_PNG(507, "必须是png文件"),
+    USERNAME_MUST_NOTNULL(508, "用户名不能为空"),
+    PASSWORD_MUST_NOTNULL(509, "用户名不能为空"),
+    NICKNAME_MUST_NOTNULL(510, "用户名不能为空"),
+    EMAIL_MUST_NOTNULL(511, "用户名不能为空");
+
 
     int code;
     String msg;
