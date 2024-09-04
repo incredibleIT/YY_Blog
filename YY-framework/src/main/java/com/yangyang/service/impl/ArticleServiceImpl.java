@@ -15,6 +15,7 @@ import com.yangyang.mapper.ArticleMapper;
 import com.yangyang.service.ArticleService;
 import com.yangyang.service.CategoryService;
 import com.yangyang.utils.BeanCopyUtils;
+import com.yangyang.utils.RedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,8 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
 
     @Autowired
     private CategoryService categoryService;
+    @Autowired
+    private RedisCache redisCache;
 
 
     @Override
@@ -76,6 +79,10 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     public ResponseResult getArticleDetail(Long id) {
         Article article = this.getById(id);
 
+        Integer viewCount = redisCache.getCacheMapValue(SystemConstants.REDIS_KEY, id.toString());
+
+        article.setViewCount(viewCount.longValue());
+
         ArticleDetailVo articleDetailVo = BeanCopyUtils.copyBean(article, ArticleDetailVo.class);
 
 
@@ -87,5 +94,12 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
 
         return ResponseResult.okResult(articleDetailVo);
 
+    }
+
+    @Override
+    public ResponseResult updateViewCount(String id) {
+        redisCache.increment(SystemConstants.REDIS_KEY, id, SystemConstants.REDIS_INCREMENT_STEP);
+
+        return ResponseResult.okResult();
     }
 }

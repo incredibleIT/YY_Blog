@@ -28,6 +28,11 @@ public class RedisCache
         redisTemplate.opsForValue().set(key, value);
     }
 
+
+    public void increment(String key, String keyId, long step) {
+        redisTemplate.boundHashOps(key).increment(keyId, step);
+    }
+
     /**
      * 缓存基本的对象，Integer、String、实体类等
      *

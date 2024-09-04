@@ -22,5 +22,10 @@ public class SystemConstants
     public static final String ARTICLE_COMMENT = "0";
 
     public static final String LINK_COMMENT = "1";
+
+
+    public static final String  REDIS_KEY = "article:viewCount";
+
+    public static final int  REDIS_INCREMENT_STEP = 1;
     
 }

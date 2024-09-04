@@ -1,24 +1,20 @@
-package com.yangyang.domain.entity;
+package com.yangyang.domain.dto;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+
+import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("sys_user")
-public class User {
+@ApiModel(description = "用户dto")
+public class UserDto {
 
-    //主键
-    @TableId
     private Long id;
-
     //用户名
     private String userName;
     //昵称
