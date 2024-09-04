@@ -21,7 +21,7 @@ YY-Blog 包括两个主要部分：
 1. **克隆项目**
 
    ```bash
-   git clone <项目仓库地址>
+   git clone https://github.com/incredibleIT/YY_Blog.git
 
 
 ## 文档说明
