@@ -16,6 +16,12 @@ public class SystemConstants
      */
     public static final String  LINK_STATUS_NORMAL = "0";
 
+    public static final String MENU = "C";
+    public static final String BUTTON = "F";
+    /** 正常状态 */
+    public static final String NORMAL = "0";
+    public static final String ADMAIN = "1";
+
     public static final int COMMENT_ROOT_USER_ID = -1;
 
 

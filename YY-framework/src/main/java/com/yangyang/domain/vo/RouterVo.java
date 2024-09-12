@@ -1,19 +1,17 @@
 package com.yangyang.domain.vo;
 
 
+import com.yangyang.domain.entity.Menu;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryVo {
+public class RouterVo {
 
-    private String description;
-
-    private Long id;
-
-    private String name;
-
+    private List<Menu> menus;
 }

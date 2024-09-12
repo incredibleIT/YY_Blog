@@ -19,6 +19,7 @@ import com.yangyang.exception.SystemException;
 import com.yangyang.service.UploadService;
 import com.yangyang.utils.PathUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;

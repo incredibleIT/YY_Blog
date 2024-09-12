@@ -8,12 +8,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryVo {
+public class TagVo {
 
-    private String description;
 
     private Long id;
 
+    //标签名
     private String name;
 
 }

@@ -1,4 +1,4 @@
-package com.yangyang.domain.vo;
+package com.yangyang.domain.dto;
 
 
 import lombok.AllArgsConstructor;
@@ -8,12 +8,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryVo {
-
-    private String description;
-
-    private Long id;
+public class TagListDto {
 
     private String name;
-
+    private String remark;
 }
