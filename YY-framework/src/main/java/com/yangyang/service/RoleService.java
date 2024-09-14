@@ -18,4 +18,15 @@ public interface RoleService extends IService<Role> {
     ResponseResult treeSelect();
 
     ResponseResult addRole(AddRoleDto addRoleDto);
+
+    ResponseResult getRoleByUserId(Long userId);
+
+    ResponseResult updateRole(Role role);
+
+    ResponseResult deleteRole(Long roleId);
+
+    ResponseResult getRoleList(Integer pageNum, Integer pageSize, String userName, String phoneNumber, String status);
+
+    ResponseResult listAllRole();
+
 }

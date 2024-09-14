@@ -8,6 +8,7 @@ import com.yangyang.domain.vo.UserInfoVo;
 import com.yangyang.enums.AppHttpCodeEnum;
 import com.yangyang.exception.SystemException;
 import com.yangyang.mapper.UserMapper;
+import com.yangyang.service.RoleService;
 import com.yangyang.service.UserService;
 import com.yangyang.utils.BeanCopyUtils;
 import com.yangyang.utils.SecurityUtils;
@@ -23,6 +24,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private RoleService roleService;
 
 
     @Override
@@ -89,6 +93,19 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return ResponseResult.okResult();
     }
 
+    @Override
+    public ResponseResult addUser(User user) {
+        this.save(user);
+        return ResponseResult.okResult();
+    }
+
+    @Override
+    public ResponseResult deleteUser(Long id) {
+        this.removeById(id);
+
+        return ResponseResult.okResult();
+
+    }
 
 
     private boolean userNameExist(String userName) {
